@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Recent_contacts</title>
+<style>
+body{
+align:center;
+}</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+</head>
+<body style="align:center;">
+<form action ="/googlepay/api/v1/contacts?" method="POST" id="form">
+    <h1>LOGIN</h1>
+    Phone_number: <input type="text"  id="phone_no" name="phone_no"><br><br>
+    <input type="hidden" name="obj" id="obj" readonly>
+    <input type="submit" name="" onclick = "set()">
+    <script>
+        function set(e){
+            var phone_no= document.getElementById("phone_no"); 
+            
+            var object = {phone_number:phone_no.value};
+            
+            var param = JSON.stringify(object);
+            
+            var obj = document.getElementById("obj");
+            obj.setAttribute("value",param);
+        }
+        
+    </script>
+ </form>   
+</body>
+</html>
